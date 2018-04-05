@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Formulario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../CSS/estilos.css"/>
+    </head>
+    <body>
+        <div class="contenido">
+            <form method="POST" action="../fsimple">
+                <table>
+                    <tr>
+                        <td>Usuario:</td>
+                        <td><input type="text" name="Usuario" required="required"></td>
+                    </tr>
+                    <tr>
+                        <td>Contraseña:</td>
+                        <td><input type="password" name="Password" required="required"></td>
+                    </tr>
+                    <tr>
+                        <td>Nombre:</td>
+                        <td><input type="text" name="Nombre" required="required"></td>
+                    </tr>
+                    <tr>
+                        <td>Apellidos:</td>
+                        <td><input type="text" name="Apellidos" required="required"></td>
+                    </tr>
+                    <tr>
+                        <td>Sexo:</td>
+                        <td><input type="radio" name="Sexo" value="Hombre" required="required"><label>Hombre</label> <input type="radio" name="Sexo" value="Mujer"><label>Mujer</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" name="Enviar" value="Enviar"></td>
+                        <td><input type="reset" name="Limpiar" value="Limpiar"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

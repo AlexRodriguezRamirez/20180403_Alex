@@ -10,18 +10,48 @@ and open the template in the editor.
 
 .izquierda {
     float: left;
-    text-align: center;
-    margin: 8%;
+    text-align: left;
+    margin: 4%;
+    border: solid;
+    border-color: green;
+    height: 600px;
+    width: 350px;
 }
 
 .centro {
     float: left;
-    text-align: center;
-    margin: 8%;
+    text-align: left;
+    margin: 4%;
+    border: solid;
+    border-color: green;
+    height: 600px;
+    width: 350px;
 }
 
 .derecha {
     float: left;
+    text-align: left;
+    margin: 4%;
+    border: solid;
+    border-color: green;
+    height: 600px;
+    width: 350px;
+}
+
+.izquierda h1, .centro h1, .derecha h1 {
     text-align: center;
-    margin: 8%;
+}
+
+.contenido {
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 2%;
+    border: solid;
+    border-color: green;
+    text-align: center;
+}
+
+.contenido table {
+     margin: 0 auto;
+     text-align: center;
 }
