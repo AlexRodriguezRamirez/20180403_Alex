@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Formulario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../CSS/estilos.css"/>
+    </head>
+    <body>
+        <div class="contenido">
+            <form method="POST" action="../fcomplejo">
+                <table>
+                    <tr>
+                        <td>Nombre:</td>
+                        <td><input type="text" name="Nombre"></td>
+                    </tr>
+                    <tr>
+                        <td>Vehículo:</td>
+                        <td>
+                            <input type="checkbox" name="Vehiculo" value="Coche"><label>Coche</label>
+                            <input type="checkbox" name="Vehiculo" value="Moto"><label>Moto</label>
+                            <input type="checkbox" name="Vehiculo" value="Bicicleta"><label>Bicicleta</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Avatar:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td><input type="password" name="Password"></td>
+                    </tr>
+                    <tr>
+                        <td>Comida:</td>
+                        <td>
+                            <select name="Comida" size="1">
+                                <option value="Pollo asado">Pollo asado</option>
+                                <option value="Arroz con bogavante">Arroz con bogavante</option>
+                                <option value="Bacalao dorado">Bacalao dorado</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Bebidas:</td>
+                        <td>
+                            <select name="Bebidas" size="5" multiple="multiple">
+                                <option value="Agua mineral">Agua mineral</option>
+                                <option value="Cerveza">Cerveza</option>
+                                <option value="Vino tinto">Vino tinto</option>
+                                <option value="Vino blanco">Vino blanco</option>
+                                <option value="Refresco">Refresco</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Comentarios:</td>
+                        <td><textarea name="Comentarios" rows="4" cols="30" placeholder="Introduzca su comentario aquí."></textarea></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" name="Enviar" value="Enviar"> <input type="reset" name="Limpiar" value="Limpiar"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

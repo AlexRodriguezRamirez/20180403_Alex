@@ -7,7 +7,9 @@ package es.albarregas.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Enumeration;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,8 +20,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Alex
  */
-@WebServlet(name = "FormularioSimple", urlPatterns = {"/fsimple"})
-public class FormularioSimple extends HttpServlet {
+@WebServlet(name = "FormularioComplejo", urlPatterns = {"/fcomplejo"})
+public class FormularioComplejo extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,24 +40,49 @@ public class FormularioSimple extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Formulario Simple</title>");
+            out.println("<title>Formulario Complejo</title>");
             out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"CSS/estilos.css\"/>");
             out.println("</head>");
             out.println("<body class=\"contenido\">");
             out.println("<h3>Datos introducidos en el formulario:</h3>");
-            
-            Enumeration<String> params = request.getParameterNames();
-            while (params.hasMoreElements()) {
-                String nombre = params.nextElement();
-                
-                if (!nombre.startsWith("Enviar")) {
-                    out.println(nombre + ": " + request.getParameter(nombre) + "<br/>");
+
+            Map<String, String[]> datos = request.getParameterMap();
+            Set s = datos.keySet();
+            Iterator it = s.iterator();
+
+            while (it.hasNext()) {
+                String clave = (String) it.next();
+                String[] vehiculos = datos.get("Vehiculo");
+                String[] bebidas = datos.get("Bebidas");
+
+                if (clave.startsWith("Veh")) {
+                    out.print(clave + ": ");
+                    for (int i = 0; i < vehiculos.length; i++) {
+                        out.print(vehiculos[i] + "&nbsp;");
+                    }
+                    out.println("<br/>");
+                    
+                } else {
+                    if (clave.startsWith("Beb")) {
+                        out.print(clave + ": ");
+                        for (int i = 0; i < bebidas.length; i++) {
+                            out.print(bebidas[i] + "&nbsp;");
+                        }
+                        out.println("<br/>");
+                        
+                    } else {
+                        if (!clave.startsWith("Env")) {
+                            out.println(clave + ": " + request.getParameter(clave) + "<br/>");
+                        }
+                    }
+
                 }
+
             }
             
             out.println("<br/>");
             out.println("<a href=" + request.getContextPath() + ">Volver al men&uacute; principal</a>");
-            
+
             out.println("</body>");
             out.println("</html>");
         }
