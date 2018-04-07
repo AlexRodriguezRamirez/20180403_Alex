@@ -42,6 +42,10 @@ and open the template in the editor.
     text-align: center;
 }
 
+.izquierda ol li, .centro ol li, .derecha ol li {
+    margin-bottom: 20px;
+}
+
 .contenido {
     margin-left: 30%;
     margin-right: 30%;
@@ -55,4 +59,8 @@ and open the template in the editor.
      margin: 0 auto;
      text-align: center;
      border-spacing: 15px;
+}
+
+.error {
+    color: red;
 }

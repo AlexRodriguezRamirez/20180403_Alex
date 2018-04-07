@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Formulario Validaciones</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../CSS/estilos.css"/>
+    </head>
+    <body>
+        <div class="contenido">
+            <form method="POST" action="../fvalid">
+                <table>
+                    <tr>
+                        <td>Nombre:</td>
+                        <td><input type="text" name="Nombre"></td>
+                    </tr>
+                    <tr>
+                        <td>Teléfono:</td>
+                        <td><input type="text" name="Telefono"></td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td><input type="text" name="Email"></td>
+                    </tr>
+                    <tr>
+                        <td>Fecha de nacimiento:</td>
+                        <td><input type="text" name="Fecha de nacimiento" placeholder="dd/mm/aaaa"></td>
+                    </tr>
+                    <tr>
+                        <td>Vehículo:</td>
+                        <td>
+                            <input type="checkbox" name="Vehiculo" value="Coche"><label>Coche</label>
+                            <input type="checkbox" name="Vehiculo" value="Moto"><label>Moto</label>
+                            <input type="checkbox" name="Vehiculo" value="Bicicleta"><label>Bicicleta</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" name="Enviar" value="Enviar"> <input type="reset" name="Limpiar" value="Limpiar"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

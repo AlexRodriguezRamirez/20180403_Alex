@@ -20,8 +20,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Alex
  */
-@WebServlet(name = "FormularioComplejo", urlPatterns = {"/fcomplejo"})
-public class FormularioComplejo extends HttpServlet {
+@WebServlet(name = "FormularioValidaciones", urlPatterns = {"/fvalid"})
+public class FormularioValidaciones extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,7 +40,7 @@ public class FormularioComplejo extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Formulario Complejo</title>");
+            out.println("<title>Formulario Validaciones</title>");
             out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"CSS/estilos.css\"/>");
             out.println("</head>");
             out.println("<body class=\"contenido\">");
@@ -49,37 +49,85 @@ public class FormularioComplejo extends HttpServlet {
             Map<String, String[]> datos = request.getParameterMap();
             Set s = datos.keySet();
             Iterator it = s.iterator();
-
+            boolean seleccion = false; //controlar si hay algún vehículo seleccionado
+            
             while (it.hasNext()) {
                 String clave = (String) it.next();
-                String[] vehiculos = datos.get("Vehiculo");
-                String[] bebidas = datos.get("Bebidas");
+                String[] valor = datos.get(clave);
 
-                if (clave.startsWith("Veh")) {
-                    out.print("<p>" + clave + ": ");
-                    for (String vehiculo : vehiculos) {
-                        out.print(vehiculo + "&nbsp;");
-                    }
-                    out.println("</p>");
-                    
-                } else {
-                    if (clave.startsWith("Beb")) {
-                        out.print("<p>" + clave + ": ");
-                        for (String bebida : bebidas) {
-                            out.print(bebida + "&nbsp;");
+                switch (clave) {
+                    case "Nombre":
+                        if (valor[0].equals("") || valor[0] == null) {
+                            out.println("<p class=\"error\">Debe introducir un nombre.</p>");
                         }
-                        out.println("</p>");
                         
-                    } else {
-                        if (!clave.startsWith("Env")) {
-                            out.println("<p>" + clave + ": " + request.getParameter(clave) + "</p>");
+                        else {
+                            if (valor[0].matches("^.*\\d.*$")) {
+                                out.println("<p class=\"error\">El nombre no puede contener números.</p>");
+                            }
+                            
+                            else {
+                                out.println("<p>" + clave + ": " + request.getParameter(clave) + "</p>");
+                            }
                         }
-                    }
+                        break;
 
+                    case "Telefono":
+                        if (valor[0].equals("") || valor[0] == null) {
+                            out.println("<p class=\"error\">Debe introducir un teléfono.</p>");
+                        }
+                        
+                        else {
+                            if (!valor[0].matches("^[9|6|7][0-9]{8}$")) {
+                                out.println("<p class=\"error\">Número de teléfono incorrecto.</p>");
+                            }
+                            
+                            else {
+                                out.println("<p>" + clave + ": " + request.getParameter(clave) + "</p>");
+                            }
+                        }
+                        break;
+
+                    case "Email":
+                        if (valor[0].equals("") || valor[0] == null) {
+                            out.println("<p class=\"error\">Debe introducir un email.</p>");
+                        }
+                        
+                        else {
+                            if (!valor[0].matches("^[A-Za-z0-9](([a-zA-Z0-9,=\\.!\\-#|\\$%\\^&\\*\\+/\\?_`\\{\\}~]+)*)@(?:[0-9a-zA-Z-]+\\.)+[a-zA-Z]{2,9}$$")) {
+                                out.println("<p class=\"error\">Formato de email incorrecto.</p>");
+                            }
+                            
+                            else {
+                                out.println("<p>" + clave + ": " + request.getParameter(clave) + "</p>");
+                            }
+                        }
+                        break;
+
+                    case "Fecha de nacimiento":
+                        out.println("<p>" + clave + ": " + request.getParameter(clave) + "</p>");
+                        break;
+
+                    case "Vehiculo":
+                        out.print("<p>" + clave + ": ");
+                            
+                        for (String vehiculo : valor) {
+                            out.print(vehiculo + "&nbsp;");
+                        }
+                            
+                        out.println("</p>");
+                        seleccion = true;
+                        break;
+
+                    case "Enviar":
+                        break;
                 }
-
             }
             
+            if (seleccion == false) {
+                out.println("<p class=\"error\">Debe seleccionar al menos un vehículo.</p>");
+            }
+
             out.println("<br/>");
             out.println("<a href=" + request.getContextPath() + ">Volver al men&uacute; principal</a>");
 
