@@ -13,7 +13,7 @@ and open the template in the editor.
     </head>
     <body>
         <div class="contenido">
-            <form method="POST" action="../fcomplejo">
+            <form method="POST" action="../fcomplejo" enctype="multipart/form-data">
                 <table>
                     <tr>
                         <td>Nombre:</td>
@@ -29,7 +29,7 @@ and open the template in the editor.
                     </tr>
                     <tr>
                         <td>Avatar:</td>
-                        <td></td>
+                        <td><input type="file" name="Avatar" accept=".png, .jpg, .jpeg"></td>
                     </tr>
                     <tr>
                         <td>Password:</td>

@@ -6,21 +6,26 @@
 package es.albarregas.servlets;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
+import java.nio.file.Paths;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 /**
  *
  * @author Alex
  */
 @WebServlet(name = "FormularioComplejo", urlPatterns = {"/fcomplejo"})
+@MultipartConfig
 public class FormularioComplejo extends HttpServlet {
 
     /**
@@ -62,19 +67,34 @@ public class FormularioComplejo extends HttpServlet {
                     }
                     out.println("</p>");
                     
-                } else {
-                    if (clave.startsWith("Beb")) {
-                        out.print("<p>" + clave + ": ");
-                        for (String bebida : bebidas) {
-                            out.print(bebida + "&nbsp;");
-                        }
-                        out.println("</p>");
+                }
+                
+                else {
+                    /*if (clave.startsWith("Ava")) {
+                        Part filePart = request.getPart("Avatar");
+                        String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
+                        InputStream fileContent = filePart.getInputStream();
                         
-                    } else {
-                        if (!clave.startsWith("Env")) {
-                            out.println("<p>" + clave + ": " + request.getParameter(clave) + "</p>");
-                        }
+                        
+                        
                     }
+                    
+                    else {*/
+                        if (clave.startsWith("Beb")) {
+                            out.print("<p>" + clave + ": ");
+                            for (String bebida : bebidas) {
+                                out.print(bebida + "&nbsp;");
+                            }
+                            out.println("</p>");
+                        } 
+                        
+                        else {
+                            if (!clave.startsWith("Env")) {
+                                out.println("<p>" + clave + ": " + request.getParameter(clave) + "</p>");
+                            }
+                        }
+                    //}
+                    
 
                 }
 

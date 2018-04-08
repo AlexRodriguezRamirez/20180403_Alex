@@ -5,3 +5,5 @@ Commit 05/04/2018: Añadido el CSS a todas las páginas. Creado el formulario si
 Commit 06/04/2018: Añadido el formulario complejo sin validaciones. Falta implementar la subida de la imagen de avatar de usuario y realizar el formulario complejo con validaciones.
 
 Commit 07/04/2018: Añadido el formulario complejo con validaciones. Validaciones de los campos nombre, teléfono, email y vehículos funcionando correctamente, falta implementar la validacion del campo fecha de nacimiento. También está pendiente la implementación del campo avatar en el formulario complejo sin validaciones.
+
+Commit 08/04/2018: Añadida la validación de la fecha de nacimiento, con lo que doy por concluido el formulario complejo con validaciones. Sigue faltando la implementación del campo avatar en el otro formulario, que no consigo realizarla.
