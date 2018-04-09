@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Registro</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../CSS/estilos.css"/>
+    </head>
+    <body>
+        <div class="contenido">
+            <form method="POST" action="../registro">
+                <table>
+                    <caption><b>Registro</b></caption>
+                    <tr>
+                        <td>*Nombre:</td>
+                        <td><input type="text" name="Nombre"></td>
+                    </tr>
+                    <tr>
+                        <td>Apellidos:</td>
+                        <td><input type="text" name="Apellidos"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Sexo:</td>
+                        <td>
+                            <input type="radio" name="Sexo" value="Hombre" checked="checked"><label>Hombre</label>
+                            <input type="radio" name="Sexo" value="Mujer"><label>Mujer</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fecha de nacimiento:</td>
+                        <td><input type="text" name="Fecha de nacimiento" placeholder="dd/mm/aaaa"></td>
+                    </tr>
+                    <tr>
+                        <td>Documento:</td>
+                        <td>
+                            <select name="Documento" size="1">
+                                <option value="NIF">NIF</option>
+                                <option value="NIE">NIE</option>
+                                <option value="Pasaporte">Pasaporte</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>*Número de documento:</td>
+                        <td><input type="text" name="Numero de documento"></td>
+                    </tr>
+                    <tr>
+                        <td>*Usuario:</td>
+                        <td><input type="text" name="Usuario"></td>
+                    </tr>
+                    <tr>
+                        <td>*Password:</td>
+                        <td><input type="text" name="Password"></td>
+                    </tr>
+                    <tr>
+                        <td>*Teléfono:</td>
+                        <td><input type="text" name="Telefono"></td>
+                    </tr>
+                    <tr>
+                        <td>Preferencias:</td>
+                        <td class="check">
+                            <input type="checkbox" name="Preferencias" value="Deporte"><label>Deporte</label><br>
+                            <input type="checkbox" name="Preferencias" value="Lectura"><label>Lectura</label><br>
+                            <input type="checkbox" name="Preferencias" value="Cine"><label>Cine</label><br>
+                            <input type="checkbox" name="Preferencias" value="Viajes"><label>Viajes</label><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" name="Enviar" value="Enviar"> <input type="reset" name="Limpiar" value="Limpiar"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>
