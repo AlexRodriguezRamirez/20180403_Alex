@@ -9,3 +9,5 @@ Commit 07/04/2018: Añadido el formulario complejo con validaciones. Validacione
 Commit 08/04/2018: Añadida la validación de la fecha de nacimiento, con lo que doy por concluido el formulario complejo con validaciones. Sigue faltando la implementación del campo avatar en el otro formulario, que no consigo realizarla.
 
 Commit 09/04/2018: Añadida la funcionalidad Ciclo de vida de un Servlet e iniciada la funcionalidad de registro. Sólamente está operativo el formulario html, falta implementar el servlet completo.
+
+Commit 10/04/2018: Añadido el HolaMundo JSP, la funcionalidad saludo que según el sexo y la hora devuelve un saludo diferente, y la funcionalidad calcular edad, que muestra el número de años, meses y días vividos según la fecha de nacimiento introducida.
