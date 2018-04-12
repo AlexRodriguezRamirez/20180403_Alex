@@ -18,3 +18,6 @@ Commit 12/04/2018: Completada la funcionalidad de registro, pendiente de la solu
                     - La validación de la fecha la he realizado por pattern por falta de tiempo, debo modificarlo.
                     - Las preferencias me causan problemas y según cuáles seleccione desaparecen algunas de ellas y los botones del formulario. Aparentemente para que esto no suceda deben estar seleccionadas las dos últimas   (cine y viajes) o tres, debiendo ser viajes una de ellas. En caso contrario desaparece contenido.
                     - Debo modificar las marcas que indican si el campo ha sido completado correctamente o con errores por algo más visual como imágenes en lugar de párrafos.
+                    
+
+Commit 12/04/2018: Añadida la funcionalidad contador de visitas con cookies, con las opciones de borrar la cookie para reiniciar el contador. La primera vez que se visita la página se muestran ciertos atributos de la cookie como el nombre, el tiempo de expiración, la versión o si utiliza un protocolo seguro.
