@@ -68,3 +68,11 @@ and open the template in the editor.
 .check {
     text-align: left;
 }
+
+.bien {
+    color: green;
+}
+
+.mal {
+    color: red;
+}

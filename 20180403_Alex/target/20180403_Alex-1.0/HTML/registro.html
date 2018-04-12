@@ -33,13 +33,14 @@ and open the template in the editor.
                         </td>
                     </tr>
                     <tr>
-                        <td>Fecha de nacimiento:</td>
-                        <td><input type="text" name="Fecha de nacimiento" placeholder="dd/mm/aaaa"></td>
+                        <td>*Fecha de nacimiento:</td>
+                        <!-- Este campo será required para evitar un error al realizar el split si el campo está vacío-->
+                        <td><input type="text" name="Fecha de nacimiento" placeholder="dd/mm/aaaa" required="required"></td>
                     </tr>
                     <tr>
                         <td>Documento:</td>
                         <td>
-                            <select name="Documento" size="1">
+                            <select name="Tipo de documento" size="1">
                                 <option value="NIF">NIF</option>
                                 <option value="NIE">NIE</option>
                                 <option value="Pasaporte">Pasaporte</option>
@@ -48,7 +49,7 @@ and open the template in the editor.
                     </tr>
                     <tr>
                         <td>*Número de documento:</td>
-                        <td><input type="text" name="Numero de documento"></td>
+                        <td><input type="text" name="Documento"></td>
                     </tr>
                     <tr>
                         <td>*Usuario:</td>
@@ -56,7 +57,7 @@ and open the template in the editor.
                     </tr>
                     <tr>
                         <td>*Password:</td>
-                        <td><input type="text" name="Password"></td>
+                        <td><input type="password" name="Password"></td>
                     </tr>
                     <tr>
                         <td>*Teléfono:</td>
