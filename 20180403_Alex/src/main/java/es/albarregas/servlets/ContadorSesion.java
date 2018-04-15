@@ -47,8 +47,12 @@ public class ContadorSesion extends HttpServlet {
             int contador = 0;
             HttpSession sesion = request.getSession();
             
+            
+            
             if (request.getParameter("Eliminar") != null) {
+                sesion.removeAttribute("CONTADOR");
                 sesion.setAttribute("CONTADOR", 1);
+            
             }
             
             else {
