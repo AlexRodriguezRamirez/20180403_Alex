@@ -21,3 +21,5 @@ Commit 12/04/2018: Completada la funcionalidad de registro, pendiente de la solu
                     
 
 Commit 12/04/2018: Añadida la funcionalidad contador de visitas con cookies, con las opciones de borrar la cookie para reiniciar el contador. La primera vez que se visita la página se muestran ciertos atributos de la cookie como el nombre, el tiempo de expiración, la versión o si utiliza un protocolo seguro.
+
+Commit 15/04/2018: Añadida la funcionalidad contador de visitas mediante sesión en un servlet. El contador se reiniciará al marcar el checkbox "Eliminar sesión".
