@@ -14,15 +14,18 @@
     </head>
     <body class="contenido">
         
-        <% 
-            Cookie[] Cookies = request.getCookies();
+        <%             
+            Cookie[] cookies = request.getCookies();
             Cookie contador = null;
-            for (Cookie miCookie : Cookies) {
-                if (miCookie.getName().equals("CONTADOR")) {
-                    contador = new Cookie (miCookie.getName(), miCookie.getValue());
-                    break;
+            if (cookies != null) {
+                for (Cookie miCookie : cookies) {
+                    if (miCookie.getName().equals("CONTADOR")) {
+                        contador = new Cookie (miCookie.getName(), miCookie.getValue());
+                        break;
+                    }
                 }
             }
+            
             
             if (contador == null) {
                contador = new Cookie("CONTADOR", "0");

@@ -25,3 +25,5 @@ Commit 12/04/2018: Añadida la funcionalidad contador de visitas con cookies, co
 Commit 15/04/2018: Añadida la funcionalidad contador de visitas mediante sesión en un servlet. El contador se reiniciará al marcar el checkbox "Eliminar sesión".
 
 Commit 15/04/2018: Pequeña modificación en el código del servlet contador de visitas mediante sesión en la cual se añade el metodo removeAttribute();
+
+Commit 19/04/2018: Corregido el error que producía una NullPointerException en el contador de visitas mediante cookies en el primer acceso al mismo si no existía el array de cookies.

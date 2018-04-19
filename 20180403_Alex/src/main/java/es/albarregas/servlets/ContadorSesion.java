@@ -7,7 +7,6 @@ package es.albarregas.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Enumeration;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -48,19 +47,14 @@ public class ContadorSesion extends HttpServlet {
             HttpSession sesion = request.getSession();
             
             
-            
             if (request.getParameter("Eliminar") != null) {
-                sesion.removeAttribute("CONTADOR");
-                sesion.setAttribute("CONTADOR", 1);
-            
+                sesion.setAttribute("CONTADOR", 1);            
             }
             
             else {
-                contador = (int) sesion.getAttribute("CONTADOR");
-                
+                contador = (int) sesion.getAttribute("CONTADOR");                
                 sesion.setAttribute("CONTADOR", contador + 1);
-            }
-            
+            }   
             
             
             out.println("<h2>Se ha visitado la página " + sesion.getAttribute("CONTADOR") + " veces.</h2>");
