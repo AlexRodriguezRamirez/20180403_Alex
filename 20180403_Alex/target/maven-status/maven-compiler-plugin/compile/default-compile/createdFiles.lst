@@ -1,4 +1,5 @@
 es\albarregas\servlets\FormularioValidaciones.class
+es\albarregas\servlets\ControladorPaises.class
 es\albarregas\servlets\FormularioSimple.class
 es\albarregas\servlets\CicloVida.class
 es\albarregas\servlets\ContadorSesion.class

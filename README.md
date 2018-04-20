@@ -27,3 +27,5 @@ Commit 15/04/2018: Añadida la funcionalidad contador de visitas mediante sesió
 Commit 15/04/2018: Pequeña modificación en el código del servlet contador de visitas mediante sesión en la cual se añade el metodo removeAttribute();
 
 Commit 19/04/2018: Corregido el error que producía una NullPointerException en el contador de visitas mediante cookies en el primer acceso al mismo si no existía el array de cookies.
+
+Commit 21/04/2018: Añadida la funcionalidad internacionalización, la cual cargará en un select todos los países obtenidos con el método getAvailableLocales() y, posteriormente, muestra el código del idioma de dicho país, la traducción de "hola" y "adiós" a su idioma, la moneda local y la fecha y hora actuales, empleando las etiquetas de la librería fmt de JSTL y archivos .properties para ello. En el momento de cargar el select se hace la comprobación de que no haya ningúno en blanco ni duplicado y se ha implementado un método encontrado en internet que emplea JQuery para ordenar las options del select por orden alfabético.
